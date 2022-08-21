@@ -12,6 +12,7 @@
         <link rel="icon" type="imaTge/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{% static 'blog/css/blog-post.css' %}" media="screen">
+        <script src="https://kit.fontawesome.com/ca56970aed.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -59,6 +60,25 @@
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{{ post.content }}</p>
                         </section>
+                        {% if post.file_upload %}
+                            <a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" role="button" download>
+                                Download:
+
+                                {% if post.get_file_ext == 'csv' %}
+                                    <i class="fas fa-file-csv"></i>
+                                {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+                                    <i class="fa-solid fa-file-excel"></i>
+                                {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                                    <i class="fa-solid fa-file-word"></i>
+                                {% else %}
+                                    <i class="far fa-file"></i>
+                                {% endif %}
+
+                                {{ post.get_file_name }}
+
+                            </a>
+                        {% endif %}
+                        <hr>
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">

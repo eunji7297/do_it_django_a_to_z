@@ -15,6 +15,11 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
                             <h5 class="text-muted">{{ post.hook_text }}</h5>
+                            <!-- Author -->
+                            <p class ="lead">
+                                by
+                                <a href="#">{{ post.author | upper }}</a>
+                            </p>
 
                             <hr>
                             <!-- Post meta content-->

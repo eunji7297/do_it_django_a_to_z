@@ -1,13 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block head_title %}
-{{ post.title }} - Blog
+    {{ post.title }} - Blog
 {% endblock %}
 
 {% block main_area %}
         <div id="post-area">
-
-
                     <!-- Post content-->
                     <article>
                         <!-- Post header-->
@@ -58,10 +56,9 @@
                                 {{ post.get_file_name }}
                             </a>
                     </article>
-
 {% endif %}
-<hr>
 
+<hr>
         </div>
 
         <div id="comment-area">
@@ -108,6 +105,4 @@
                         </div>
                     </section>
                 </div>
-        </div>
-
 {% endblock %}
